@@ -95,10 +95,7 @@ public class ATM {
           screen.displayMessageLine("\n Justin's Food of choice is Poutine");
         break;
         case 52:
-          screen.displayMessageLine("Gavin's Favorite Lunch is Spicy Pizza");
-          break;
-        case 53:
-          screen.displayMessageLine("Emil's Favourite Lunch is Fried Chicken");
+        screen.displayMessageLine("Gavin's Favorite Lunch is Spicy Pizza");
           break;
         case 9:
         screen.displayMessageLine("Cole's Favorite Lunch is Mild Pizza");
@@ -118,7 +115,6 @@ public class ATM {
     screen.displayMessageLine("3 - Deposit funds");
     screen.displayMessageLine("9 - Cole's Favorite Lunch");
     screen.displayMessageLine("52 - Gavin's Favorite Lunch");
-    screen.displayMessageLine("53 - Emil's Favorite Lunch");
     screen.displayMessageLine("62 - Justin's Favorite Lunch");
     screen.displayMessageLine("4 - Exit\n");
     screen.displayMessage("[?] Enter a choice: ");
