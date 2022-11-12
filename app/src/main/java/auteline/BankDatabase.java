@@ -8,7 +8,7 @@
 // Represents the bank account information database
 
 package auteline;
-
+import java.sql.*;
 public class BankDatabase {
 
   private Account accounts[]; // array of Accounts
@@ -18,6 +18,10 @@ public class BankDatabase {
     accounts = new Account[2]; // just 2 accounts for testing
     accounts[0] = new Account(12345, 54321, 1000.0, 1200.0);
     accounts[1] = new Account(98765, 56789, 200.0, 200.0);
+
+    SQLAdapter sqlAdapter = new SQLAdapter();
+    Connection con = sqlAdapter.startConnection();
+    sqlAdapter.closeConnection(con);
   }
 
   // retrieve Account object containing specified account number
