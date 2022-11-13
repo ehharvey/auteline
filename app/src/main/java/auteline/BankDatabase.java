@@ -21,6 +21,7 @@ public class BankDatabase {
 
     SQLAdapter sqlAdapter = new SQLAdapter();
     Connection con = sqlAdapter.startConnection();
+    sqlAdapter.executeQuery(con, "SELECT * FROM bank_accounts");
     sqlAdapter.closeConnection(con);
   }
 
