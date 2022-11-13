@@ -24,7 +24,14 @@ public class SQLAdapter {
         }
         return result;
     }
-
+    public void executeUpdate(String query){
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
+        } catch (Exception e) {
+            System.out.println("Could not execute MySQL update query: " + e);
+        }
+    }
     public void closeConnection(){
         try{
             connection.close();
@@ -53,7 +60,7 @@ public class SQLAdapter {
     public double getAvailableBalance(int accountNumber) {
         ResultSet resultSet = executeQuery("SELECT available_balance FROM bank_accounts WHERE account_number = " + accountNumber +";");
         try {
-
+            resultSet.next();
             return resultSet.getDouble("available_balance");
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -64,6 +71,7 @@ public class SQLAdapter {
     public double getTotalBalance(int accountNumber) {
         ResultSet resultSet = executeQuery("SELECT total_balance FROM bank_accounts WHERE account_number = " + accountNumber +";");
         try {
+            resultSet.next();
             return resultSet.getDouble("total_balance");
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -73,13 +81,13 @@ public class SQLAdapter {
     // credits an amount to the account
     public void credit(int accountNumber, double amount) {
         //adds to totalBalance of account
-        ResultSet resultSet = executeQuery("UPDATE bank_accounts SET total_balance = total_balance + " + amount + " WHERE account_number = " + accountNumber +";");
+        executeUpdate("UPDATE bank_accounts SET total_balance = total_balance + " + amount + " WHERE account_number = " + accountNumber +";");
     }
 
     // debits an amount from the account
     public void debit(int accountNumber, double amount) {
         //deducts from available balance and total balance
-        ResultSet resultSet = executeQuery("UPDATE bank_accounts SET total_balance = total_balance - " + amount + ", available_balance = available_balance - " + amount + " WHERE account_number = " + accountNumber +";");
+        executeUpdate("UPDATE bank_accounts SET total_balance = total_balance - " + amount + ", available_balance = available_balance - " + amount + " WHERE account_number = " + accountNumber +";");
 
     }
 }
