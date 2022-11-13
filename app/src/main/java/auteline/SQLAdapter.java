@@ -4,73 +4,82 @@ import java.sql.*;
 
 public class SQLAdapter {
 
-    public Connection startConnection(){
-        Connection con = null;
+    Connection connection = null;
+    public void startConnection(){
+
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/auteline_schema","root","pass");
-            
-            
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/auteline_schema","root","pass");
         } catch (Exception e) {
             System.out.println("Could not create MySQL connection: " + e);
-            
         }
-        return con;
     }
 
-    public ResultSet executeQuery(Connection con, String query){
+    public ResultSet executeQuery(String query){
         ResultSet result = null;
         try {
-            Statement statement = con.createStatement();
+            Statement statement = connection.createStatement();
             result = statement.executeQuery(query);
-            while (result.next()){
-                System.out.println("Account number: " + result.getInt(1));
-            }
-
         } catch (Exception e) {
             System.out.println("Could not execute MySQL query: " + e);
         }
-        
         return result;
     }
-   
-    public void closeConnection(Connection con){
+
+    public void closeConnection(){
         try{
-            con.close(); 
+            connection.close();
         } catch (Exception e) {
             System.out.println("Could not close MySQL connection: " + e);
-        } 
+        }
     }
 
 
     // determines whether a user-specified PIN matches PIN in Account
-    public boolean validatePIN(Connection con, int accountNumber, int userPIN) throws SQLException {
-        ResultSet resultSet = executeQuery(con, "SELECT pin FROM bank_accounts WHERE account_number = " + accountNumber);
-        if (resultSet.next() == false){
-
+    public boolean validatePIN(int accountNumber, int userPIN){
+        boolean validPin;
+        ResultSet resultSet = executeQuery("SELECT pin FROM bank_accounts WHERE account_number = " + accountNumber +";");
+        try {
+            if (!resultSet.next()){
+                validPin = false;
+            }
+            else validPin = resultSet.getInt("pin") == userPIN;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-        return false;
+        return validPin;
     }
 
     // returns available balance
-    public double getAvailableBalance(Connection con, int accountNumber) {
+    public double getAvailableBalance(int accountNumber) {
+        ResultSet resultSet = executeQuery("SELECT available_balance FROM bank_accounts WHERE account_number = " + accountNumber +";");
+        try {
 
-        return 0;
+            return resultSet.getDouble("available_balance");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // returns the total balance
-    public double getTotalBalance(Connection con, int accountNumber) {
-
-        return 0;
+    public double getTotalBalance(int accountNumber) {
+        ResultSet resultSet = executeQuery("SELECT total_balance FROM bank_accounts WHERE account_number = " + accountNumber +";");
+        try {
+            return resultSet.getDouble("total_balance");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // credits an amount to the account
-    public void credit(Connection con, int accountNumber, double amount) {
-
-
+    public void credit(int accountNumber, double amount) {
+        //adds to totalBalance of account
+        ResultSet resultSet = executeQuery("UPDATE bank_accounts SET total_balance = total_balance + " + amount + " WHERE account_number = " + accountNumber +";");
     }
 
     // debits an amount from the account
-    public void debit(Connection con, int accountNumber, double amount) {
+    public void debit(int accountNumber, double amount) {
+        //deducts from available balance and total balance
+        ResultSet resultSet = executeQuery("UPDATE bank_accounts SET total_balance = total_balance - " + amount + ", available_balance = available_balance - " + amount + " WHERE account_number = " + accountNumber +";");
 
     }
 }

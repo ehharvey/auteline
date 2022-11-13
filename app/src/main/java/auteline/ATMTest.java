@@ -11,8 +11,20 @@ package auteline;
 
 public class ATMTest {
 
+  public static boolean runWithSQL = true;
+  public static boolean runWithGUI = false;
   // main method creates and runs the ATM
   public static void main(String[] args) {
+    //check for command line arguments
+    for (String arg: args){
+      if (arg.equals("--SQL") || arg.equals("-SQL")) {
+        //Confirm desired flags with group later
+        runWithSQL = true;
+      }
+      else if (arg.equals("--GUI") || arg.equals("-GUI")){
+        runWithGUI = true;
+      }
+    }
     Screen screen = new Screen();
     Keypad keypad = new Keypad();
     CashDispenser cashDispenser = new CashDispenser();
