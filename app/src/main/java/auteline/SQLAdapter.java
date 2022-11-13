@@ -23,7 +23,7 @@ public class SQLAdapter {
             Statement statement = con.createStatement();
             result = statement.executeQuery(query);
             while (result.next()){
-                System.out.println("Account number: " +result.getInt(1));
+                System.out.println("Account number: " + result.getInt(1));
             }
 
         } catch (Exception e) {
@@ -43,8 +43,11 @@ public class SQLAdapter {
 
 
     // determines whether a user-specified PIN matches PIN in Account
-    public boolean validatePIN(Connection con, int accountNumber, int userPIN) {
+    public boolean validatePIN(Connection con, int accountNumber, int userPIN) throws SQLException {
+        ResultSet resultSet = executeQuery(con, "SELECT pin FROM bank_accounts WHERE account_number = " + accountNumber);
+        if (resultSet.next() == false){
 
+        }
         return false;
     }
 
