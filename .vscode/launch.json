@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ServerApplication",
+            "request": "launch",
+            "mainClass": "frame.ServerApplication",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
             "name": "Launch Server",
             "request": "launch",
             "mainClass": "frame.Server",
