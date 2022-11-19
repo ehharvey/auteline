@@ -18,16 +18,13 @@ plugins {
     id("jacoco")
     id("io.ktor.plugin") version "2.1.2"
     id("org.sonarqube") version "3.4.0.2513"
-    id("org.springframework.boot") version "2.5.0"
 }
-
 
 
 dependencies {
     // Use JUnit test framework.
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-core:3.+")
-
 }
 
 application {
