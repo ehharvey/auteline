@@ -18,6 +18,13 @@ plugins {
     id("jacoco")
     id("io.ktor.plugin") version "2.1.2"
     id("org.sonarqube") version "3.4.0.2513"
+
+    // SpringBoot
+    id("org.springframework.boot") version "2.7.5"
+	id("io.spring.dependency-management") version "1.0.15.RELEASE"
+	kotlin("jvm") version "1.6.21"
+	kotlin("plugin.spring") version "1.6.21"
+
 }
 
 
@@ -25,6 +32,13 @@ dependencies {
     // Use JUnit test framework.
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-core:3.+")
+
+    // Spring Boot
+    implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 application {
