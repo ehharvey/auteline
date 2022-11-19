@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch ServerApplication",
             "request": "launch",
+            "mainClass": "controller.ServerApplication",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServerApplication",
+            "request": "launch",
             "mainClass": "frame.ServerApplication",
             "projectName": "app"
         },

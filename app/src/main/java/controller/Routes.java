@@ -1,4 +1,4 @@
-package frame;
+package controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -6,14 +6,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Routes {
 
-	@GetMapping("/")
-	public String index() {
-		return "This is the index page";
-	}
+    // @RequestMapping("/")
+    // public ModelAndView welcome() {
+    //     ModelAndView modelAndView = new ModelAndView();
+    //     modelAndView.setViewName("login.html");
+    //     return modelAndView;
+    // } 
+
+    // @GetMapping("/")
+    // public String index() {
+    //     return "index.html";
+    // }
 
 	@GetMapping("/login")
 	public String login() {
-		return "This is the login page";
+		return "<h1>Hello world</h1>";
 	}
 
     @GetMapping("/login-m")
