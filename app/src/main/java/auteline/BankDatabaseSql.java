@@ -2,7 +2,7 @@ package auteline;
 
 import java.sql.*;
 
-public class SQLAdapter {
+public class BankDatabaseSql implements BankDatabaseInterface {
 
     Connection connection = null;
     public void startConnection(){
@@ -89,6 +89,12 @@ public class SQLAdapter {
         //deducts from available balance and total balance
         executeUpdate("UPDATE bank_accounts SET total_balance = total_balance - " + amount + ", available_balance = available_balance - " + amount + " WHERE account_number = " + accountNumber +";");
 
+    }
+
+    @Override
+    public boolean authenticateUser(int userAccountNumber, int userPIN) {
+        // TODO Auto-generated method stub
+        return false;
     }
 }
 
