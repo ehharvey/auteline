@@ -12,7 +12,7 @@ package auteline;
 public class BalanceInquiry extends Transaction {
 
   // BalanceInquiry constructor
-  public BalanceInquiry(int userAccountNumber, Screen atmScreen, BankDatabase atmBankDatabase) {
+  public BalanceInquiry(int userAccountNumber, Screen atmScreen, BankDatabaseInterface atmBankDatabase) {
     super(userAccountNumber, atmScreen, atmBankDatabase);
   }
 

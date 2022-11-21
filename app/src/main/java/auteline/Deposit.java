@@ -17,7 +17,7 @@ public class Deposit extends Transaction {
   private final static int CANCELED = 0; // constant for cancel option
 
   // Deposit constructor
-  public Deposit(int userAccountNumber, Screen atmScreen, BankDatabase atmBankDatabase,
+  public Deposit(int userAccountNumber, Screen atmScreen, BankDatabaseInterface atmBankDatabase,
                  Keypad atmKeypad, DepositSlot atmDepositSlot) {
     // initialize superclass variables
     super(userAccountNumber, atmScreen, atmBankDatabase);
@@ -28,7 +28,7 @@ public class Deposit extends Transaction {
 
   // perform transaction
   public void execute() {
-    BankDatabase bankDatabase = getBankDatabase(); // get reference
+    BankDatabaseInterface bankDatabase = getBankDatabase(); // get reference
     Screen screen = getScreen(); // get reference
     amount = promptForDepositAmount(); // get deposit amount from user
     // check whether user entered a deposit amount or canceled

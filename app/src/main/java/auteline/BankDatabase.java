@@ -19,10 +19,6 @@ public class BankDatabase implements BankDatabaseInterface {
     accounts[0] = new Account(12345, 54321, 1000.0, 1200.0);
     accounts[1] = new Account(98765, 56789, 200.0, 200.0);
 
-    // if(ATMTest.runWithSQL){
-    //   sqlAdapter.startConnection();
-    // }
-
   }
 
   // retrieve Account object containing specified account number
@@ -40,9 +36,6 @@ public class BankDatabase implements BankDatabaseInterface {
   // determine whether user-specified account number and PIN match
   // those of an account in the database
   public boolean authenticateUser(int userAccountNumber, int userPIN) {
-    // if (ATMTest.runWithSQL){
-    //   return sqlAdapter.validatePIN(userAccountNumber, userPIN);
-    // }
 
     // attempt to retrieve the account with the account number
     Account userAccount = getAccount(userAccountNumber);
@@ -53,19 +46,12 @@ public class BankDatabase implements BankDatabaseInterface {
 
   // return available balance of Account with specified account number
   public double getAvailableBalance(int userAccountNumber) {
-    // if (ATMTest.runWithSQL){
-    //   return sqlAdapter.getAvailableBalance(userAccountNumber);
-    // }
     
     return getAccount(userAccountNumber).getAvailableBalance();
   }
 
   // return total balance of Account with specified account number
   public double getTotalBalance(int userAccountNumber) {
-    // if (ATMTest.runWithSQL) {
-    //   return sqlAdapter.getTotalBalance(userAccountNumber);
-
-    // }
 
     return getAccount(userAccountNumber).getTotalBalance();
     
@@ -73,20 +59,14 @@ public class BankDatabase implements BankDatabaseInterface {
 
   // credit an amount to Account with specified account number
   public void credit(int userAccountNumber, double amount) {
-    // if (ATMTest.runWithSQL){
-    //   sqlAdapter.credit(userAccountNumber, amount);
-    // }
-    
+
     getAccount(userAccountNumber).credit(amount);
     
   }
 
   // debit an amount from of Account with specified account number
   public void debit(int userAccountNumber, double amount) {
-    // if (ATMTest.runWithSQL){
-    //   sqlAdapter.debit(userAccountNumber, amount);
-    // }
-    
+
     getAccount(userAccountNumber).debit(amount);
     
   }

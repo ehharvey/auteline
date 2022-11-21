@@ -11,7 +11,7 @@ package auteline;
 
 public class ATMTest {
 
-  public static boolean runWithSQL = false;
+  public static boolean runWithSQL = true;
   public static boolean runWithGUI = false;
   // main method creates and runs the ATM
   public static void main(String[] args) {
@@ -29,10 +29,17 @@ public class ATMTest {
     Keypad keypad = new Keypad();
     CashDispenser cashDispenser = new CashDispenser();
     DepositSlot depositSlot = new DepositSlot();
-    BankDatabase bankDatabase = new BankDatabase();
+    BankDatabaseInterface bankDatabase;
 
-    ATM mobileATM = new ATM(screen, keypad, cashDispenser, 
-                            depositSlot, bankDatabase);
+    if (runWithSQL){
+      bankDatabase = new BankDatabaseSql();
+    }
+    else{
+      bankDatabase = new BankDatabase();
+    }
+
+    ATM mobileATM = new ATM(screen, keypad, cashDispenser,
+            depositSlot, bankDatabase);
     mobileATM.run();
   }
 
