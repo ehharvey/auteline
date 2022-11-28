@@ -14,8 +14,6 @@ jobs:
         uses: tailscale/github-action@v1
         with:
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-          
-      - uses: actions/checkout@v3
       
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
