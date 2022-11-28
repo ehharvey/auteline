@@ -53,7 +53,7 @@ SETUP_COMMANDS = \
 
 def setup():
     database_connection = mysql.connector.connect(
-        host=os.environ.get("SQL_IP"),
+        host="100.115.82.243",
         user="sqiii",
         password=os.environ.get("SQL_PASSWORD"),
         database=DATABASE_NAME,
@@ -177,7 +177,7 @@ if __name__ == "__main__":
         mysql.connector.connect(
             user="sqiii",
             password=os.environ.get("SQL_PASSWORD"),
-            host=os.environ.get("SQL_IP"),
+            host="100.115.82.243",
             database=DATABASE_NAME,
             autocommit = True
         ) for i in range(10)
