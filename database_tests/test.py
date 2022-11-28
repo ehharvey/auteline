@@ -11,6 +11,7 @@ from datetime import timedelta, datetime
 
 DATABASE_NAME = "auteline"
 TABLE_NAME = "bank_accounts"
+SQL_HOST = "sqiii-mysql"
 
 # Tuples of account number, pin
 TEST_ACCOUNTS = [
@@ -53,7 +54,7 @@ SETUP_COMMANDS = \
 
 def setup():
     database_connection = mysql.connector.connect(
-        host="100.115.82.243",
+        host=SQL_HOST,
         user="sqiii",
         password=os.environ.get("SQL_PASSWORD"),
         database=DATABASE_NAME,
@@ -177,7 +178,7 @@ if __name__ == "__main__":
         mysql.connector.connect(
             user="sqiii",
             password=os.environ.get("SQL_PASSWORD"),
-            host="100.115.82.243",
+            host=SQL_HOST,
             database=DATABASE_NAME,
             autocommit = True
         ) for i in range(10)
