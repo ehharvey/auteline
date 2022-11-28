@@ -42,7 +42,7 @@ public class DepositTests {
     public void T003_getBankDatabase_Bdb_Bdb(){
         BankDatabase expected = mockDatabase;
 
-        BankDatabase actual = deposit.getBankDatabase();
+        BankDatabaseInterface actual = deposit.getBankDatabase();
 
         assertEquals(expected, actual);
     }
