@@ -11,7 +11,7 @@ package auteline;
 
 public class ATMTest {
 
-  public static boolean runWithSQL = true;
+  public static boolean runWithSQL = false;
   public static boolean runWithGUI = false;
   // main method creates and runs the ATM
   public static void main(String[] args) {
