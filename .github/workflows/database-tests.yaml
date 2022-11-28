@@ -10,12 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      
       - name: Tailscale
-        uses: tailscale/github-action@v1
+        uses: ./
         with:
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
           
-      - uses: actions/checkout@v3
+      
       
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
@@ -30,4 +32,4 @@ jobs:
           pip install pytest
           pip install -r ./database_tests/requirements.txt
       - name: Test
-        run: SQL_PASSWORD=${{ secrets.SQL_PASSWORD }} python database_tests/test.py
+        run: SQL_PASSWORD=${{ secrets.SQL_PASSWORD }} SQL_IP=${{ secrets.SQL_IP }} python database_tests/test.py
