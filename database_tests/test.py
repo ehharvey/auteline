@@ -11,7 +11,7 @@ from datetime import timedelta, datetime
 
 DATABASE_NAME = "auteline"
 TABLE_NAME = "bank_accounts"
-SQL_HOST = "sqiii-mysql"
+SQL_HOST = "100.77.159.99"
 
 # Tuples of account number, pin
 TEST_ACCOUNTS = [
