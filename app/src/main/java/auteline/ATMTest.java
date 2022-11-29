@@ -11,7 +11,11 @@ package auteline;
 
 public class ATMTest {
 
+  public static boolean runWithSQL = false;
+  public static boolean runWithGUI = false;
 
+  public static boolean customIPFlag = false;
+  public static String MySQL_IP = "localhost"; 
   // main method creates and runs the ATM
   public static void main(String[] args) {
     boolean runWithSQL = false;
@@ -25,6 +29,13 @@ public class ATMTest {
       }
       else if (arg.equals("--GUI") || arg.equals("-GUI")){
         runWithGUI = true;
+      }
+      else if(arg.equals("-ip") || arg.equals("--ip")|| arg.equals("-IP") || arg.equals("--IP")){
+        customIPFlag = true;
+      }
+      else if(customIPFlag){
+        MySQL_IP = arg;
+        customIPFlag = false;
       }
     }
     Screen screen = new Screen();
