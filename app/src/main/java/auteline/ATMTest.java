@@ -11,10 +11,12 @@ package auteline;
 
 public class ATMTest {
 
-  public static boolean runWithSQL = false;
-  public static boolean runWithGUI = false;
+
   // main method creates and runs the ATM
   public static void main(String[] args) {
+    boolean runWithSQL = false;
+    boolean runWithGUI = false;
+    
     //check for command line arguments
     for (String arg: args){
       if (arg.equals("--SQL") || arg.equals("-SQL")) {
