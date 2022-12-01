@@ -1,24 +1,21 @@
 package controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Routes {
 
-    // @RequestMapping("/")
-    // public ModelAndView welcome() {
-    //     ModelAndView modelAndView = new ModelAndView();
-    //     modelAndView.setViewName("login.html");
-    //     return modelAndView;
-    // } 
+    @GetMapping("/login")                     // it only support port method
+    public String saveDetails(@RequestParam("account") int account, @RequestParam("pin") int pin) {
+		if(account == 1234 && pin == 4321)
+        	return "menu.html";           
+		return "login";
+    }
 
-    // @GetMapping("/")
-    // public String index() {
-    //     return "index.html";
-    // }
-
-	@GetMapping("/")
+	@GetMapping("/login?account=<int>&pin=<int>")
 	public String landing() {
 		return "index";
 	}
