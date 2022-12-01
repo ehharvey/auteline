@@ -10,9 +10,12 @@ public class Routes {
 
     @GetMapping("/login")                     // it only support port method
     public String saveDetails(@RequestParam("account") int account, @RequestParam("pin") int pin) {
+		
+		// TODO account verifiaction with database
+		
 		if(account == 1234 && pin == 4321)
-        	return "menu.html";           
-		return "login";
+        	return "<script>location.href='menu.html'</script>";           
+        return "<script>alert('Incorrect Credentials');location.href='login.html';</script>";           
     }
 
 	@GetMapping("/login?account=<int>&pin=<int>")

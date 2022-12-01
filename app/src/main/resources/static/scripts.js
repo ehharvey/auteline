@@ -1,6 +1,7 @@
+
+
 // Number Pad
 function insertNumber(digit){
-    console.log(digit);
     var textbox = document.getElementById("input");
     textbox.value += digit;
 }
@@ -15,7 +16,7 @@ function clearInput(){
 
 //TODO deposit funds
 function depositFunds(){
-
+    alert("Help!");
 }
 
 function depositError(){
@@ -38,4 +39,14 @@ function insufficientFunds(){
 
 function withdrawSuccess(){
     alert("Success! Please take your withdraw funds from the slot.")
+}
+
+// Login
+
+function loginManual(){
+    console.log(1);
+    var account = document.getElementById("account");
+    var pin = document.getElementById("pin");
+    location.href = '/login?account=' + account.value + '&pin=' + pin.value;
+
 }

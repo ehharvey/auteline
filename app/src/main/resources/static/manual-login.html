@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
     <title>Welcome</title>
 </head>
 
 <body>
+
+    <script src="scripts.js"></script>
+
     <img class="background" src="/images/landscape.jpeg">
     <div class="container">
         <div class="left column">
@@ -25,7 +26,7 @@
                     placeholder="Account Number">
                 <input type="password" inputmode="numeric" class="textbox item" name="pin" id="pin" placeholder="Pin">
 
-                <input class="item button" type="button" onclick="window.location.href='/menu.html';" value="Login" />
+                <button class="item button" type="button" onclick="loginManual()">Login</button>
             </div>
         </div>
         <div class="right column">
