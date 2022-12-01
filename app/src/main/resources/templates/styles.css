@@ -12,6 +12,10 @@ body, html
     height: 100%;
 }
 
+h1, h2, h3, h4, h5{
+
+}
+
 .background
 {
     position: absolute;
@@ -24,15 +28,87 @@ body, html
     filter: blur(5px);
 }
 
-.center
+.logo {
+    height: 126px;
+    width: 126px;
+    margin:  10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    font-size: x-large;
+    border: 0;
+    background-color: aliceblue;
+}
+
+.button:hover{
+    background-color: rgb(134, 156, 125);
+}
+
+.button:focus{
+    background-color: rgb(134, 156, 125);  
+}
+
+.textbox{
+    background-color: aliceblue;
+    border: 0;
+    height:60px;
+    width: 200px;
+    font-size: 24px;
+
+}
+
+.container
 {
-    width: 40%;
+    width: 50%;
     height: 100%;
-    background-color: hwb(45 93% 4%);
-    box-shadow: 0px 0px 10px hwb(45 93% 4%);
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+    backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.508);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    
 }
 
+.inner-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.item{
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.num-pad{
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.number-button{
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+    border: 0;
+
+}
+
+.number-button:hover{
+    background-color: rgb(134, 156, 125);
+}
