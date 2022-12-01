@@ -7,22 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
     <title>Welcome</title>
 </head>
-
 <body>
     <script src="scripts.js"></script>
     <img class="background" src="/images/landscape.jpeg">
     <div class="container">
-        <div class="left column">
-
+        <div class="column left">
         </div>
-        <div class="center column">
+        <div class="column center">
             <div class="inner-container">
-                <img class="item logo" src="images/logo.jpeg">
-                <h4 class="item">Insert your client card into the deposit slot below</h4>
-                <input type="password" inputmode="numeric" class="textbox" name="pin" id="input">
+                <h1 class="item">Main Menu</h1>
+                <input type="text" class="textbox item" placeholder="$ " name="deposit" id="input">
 
                 <div class="num-pad item">
                     <button class="number-button number" onclick="insertNumber(9)">9</button>
@@ -35,16 +31,17 @@
                     <button class="number-button number" onclick="insertNumber(2)">2</button>
                     <button class="number-button number" onclick="insertNumber(1)">1</button>
                     <button class="number-button number" onclick="insertNumber(0)">0</button>
-                    <button class="number-button" style="background-color: rgb(158, 212, 158);">Login</button>
+                    <button class="number-button" onclick="depositFunds()" style="background-color: rgb(158, 212, 158);">Deposit</button>
                     <button class="number-button" onclick="clearInput()" style="background-color: rgb(239, 79, 44);">Clear</button>
 
                 </div>
-                <input class="item button" type="button" onclick="window.location.href='/manual-login.html';"
-                    value="Manual Login" />
+                
+                <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
+
             </div>
         </div>
-        <div class="right column">
-
+        <div class="column right">
+            <input type="button" value="Logout" onclick="window.location.href='/index.html';"class="button item">
         </div>
     </div>
 </body>

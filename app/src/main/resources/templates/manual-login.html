@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +10,28 @@
 
     <title>Welcome</title>
 </head>
+
 <body>
     <img class="background" src="/images/landscape.jpeg">
     <div class="container">
-        <div class="inner-container">
-            <img class="item logo" src="images/logo.jpeg">
-            <h4 class="item">Manual Account Access</h4>
-            <input type="text" inputmode="numeric" class="textbox item" name="account" id="account" placeholder="Account Number">
-            <input type="password" inputmode="numeric" class="textbox item" name="pin" id="pin" placeholder="Pin">
-            
-            <input class="item button" type="button" onclick= "window.location.href='/menu';" value="Login"/>
+        <div class="left column">
+
+        </div>
+        <div class="center column">
+            <div class="inner-container">
+                <img class="item logo" src="images/logo.jpeg">
+                <h4 class="item">Manual Account Access</h4>
+                <input type="text" inputmode="numeric" class="textbox item" name="account" id="account"
+                    placeholder="Account Number">
+                <input type="password" inputmode="numeric" class="textbox item" name="pin" id="pin" placeholder="Pin">
+
+                <input class="item button" type="button" onclick="window.location.href='/menu.html';" value="Login" />
+            </div>
+        </div>
+        <div class="right column">
+
         </div>
     </div>
-    </body>
+</body>
+
 </html>

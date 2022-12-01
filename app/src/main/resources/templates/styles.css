@@ -5,6 +5,7 @@
     margin: 0px;
     top: 0;
     left: 0;
+    overflow: hidden;
 }
 
 body, html
@@ -62,19 +63,37 @@ h1, h2, h3, h4, h5{
 
 }
 
-.container
+.column{
+    padding: 25px;
+}
+
+.container 
 {
-    width: 50%;
-    height: 100%;
-    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+     display: grid;
+     grid-template-columns: 25% 50% 25%;
+     row-gap: 0px;
+     column-gap: 0px;
+     width: 100%;
+     height: 100%;
+}
+
+
+
+.left{
+   text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.center{
     backdrop-filter: blur(14px);
     background-color: rgba(255, 255, 255, 0.508);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    
 }
 
 .inner-container{
