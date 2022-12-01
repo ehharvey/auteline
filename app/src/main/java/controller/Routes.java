@@ -18,9 +18,9 @@ public class Routes {
     //     return "index.html";
     // }
 
-	@GetMapping("/login")
-	public String login() {
-		return "<h1>Hello world</h1>";
+	@GetMapping("/")
+	public String landing() {
+		return "index";
 	}
 
     @GetMapping("/login-m")
