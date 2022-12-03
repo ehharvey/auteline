@@ -20,17 +20,21 @@
             <div class="inner-container">
                 <h1 class="item">Withdraw</h1>
                 <p>Select a withdraw amount</p>
-                <input type="button" onclick="window.location.href=''" value="$20" class="button item">
-                <input type="button" onclick="window.location.href=''" value="$40" class="button item">
-                <input type="button" onclick="window.location.href=''" value="$60" class="button item">
-                <input type="button" onclick="window.location.href=''" value="$100" class="button item">
-                <input type="button" onclick="window.location.href=''" value="$200" class="button item">
+                <form action="/withdraw" method="post" class="item">
+                <input type="submit" name="amount" value="20" class="button item">
+                <input type="submit" name="amount" value="40" class="button item">
+                <input type="submit" name="amount" value="60" class="button item">
+                <input type="submit" name="amount" value="100" class="button item">
+                <input type="submit" name="amount" value="200" class="button item">
+            </form>
                 <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
 
             </div>
         </div>
         <div class="column right">
-            <input type="button" value="Logout" onclick="window.location.href='/index.html';"class="button item">
+            <form action="/logout" method="post">
+                <input type="submit" value="Logout" class="button item">
+            </form>
         </div>
     </div>
 </body>

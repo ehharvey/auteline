@@ -22,11 +22,11 @@
             <div class="inner-container">
                 <img class="item logo" src="images/logo.jpeg">
                 <h4 class="item">Manual Account Access</h4>
-                <input type="text" inputmode="numeric" class="textbox item" name="account" id="account"
-                    placeholder="Account Number">
-                <input type="password" inputmode="numeric" class="textbox item" name="pin" id="pin" placeholder="Pin">
-
-                <button class="item button" type="button" onclick="loginManual()">Login</button>
+                <form class="inner-container" action="/manual-login" method="post">
+                    <input type="text" inputmode="numeric" class="textbox item" name="account" id="account" placeholder="Account Number">
+                    <input type="password" inputmode="numeric" class="textbox item" name="pin" id="pin" placeholder="Pin">
+                    <input class="item button" type="submit" value="Login">
+                </form>
             </div>
         </div>
         <div class="right column">

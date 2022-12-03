@@ -9,6 +9,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title>Welcome</title>
 </head>
+
 <body>
     <script src="scripts.js"></script>
     <img class="background" src="/images/landscape.jpeg">
@@ -18,30 +19,33 @@
         <div class="column center">
             <div class="inner-container">
                 <h1 class="item">Main Menu</h1>
-                <input type="text" class="textbox item" placeholder="$ " name="deposit" id="input">
 
-                <div class="num-pad item">
-                    <button class="number-button number" onclick="insertNumber(9)">9</button>
-                    <button class="number-button number" onclick="insertNumber(8)">8</button>
-                    <button class="number-button number" onclick="insertNumber(7)">7</button>
-                    <button class="number-button number" onclick="insertNumber(6)">6</button>
-                    <button class="number-button number" onclick="insertNumber(5)">5</button>
-                    <button class="number-button number" onclick="insertNumber(4)">4</button>
-                    <button class="number-button number" onclick="insertNumber(3)">3</button>
-                    <button class="number-button number" onclick="insertNumber(2)">2</button>
-                    <button class="number-button number" onclick="insertNumber(1)">1</button>
-                    <button class="number-button number" onclick="insertNumber(0)">0</button>
-                    <button class="number-button" onclick="depositFunds()" style="background-color: rgb(158, 212, 158);">Deposit</button>
-                    <button class="number-button" onclick="clearInput()" style="background-color: rgb(239, 79, 44);">Clear</button>
-
-                </div>
+                <form action="/deposit" method="post">
+                    <input type="text" class="textbox item" placeholder="$ " name="deposit" id="input">
+                    <div class="num-pad item">
+                        <input type = "button" value = "9" class = "number-button number" onclick="insertNumber(9)">
+                        <input type = "button" value = "8" class = "number-button number" onclick="insertNumber(8)">
+                        <input type = "button" value = "7" class = "number-button number" onclick="insertNumber(7)">
+                        <input type = "button" value = "6" class = "number-button number" onclick="insertNumber(6)">
+                        <input type = "button" value = "5" class = "number-button number" onclick="insertNumber(5)">
+                        <input type = "button" value = "4" class = "number-button number" onclick="insertNumber(4)">
+                        <input type = "button" value = "3" class = "number-button number" onclick="insertNumber(3)">
+                        <input type = "button" value = "2" class = "number-button number" onclick="insertNumber(2)">
+                        <input type = "button" value = "1" class = "number-button number" onclick="insertNumber(1)">
+                        <input type = "button" value = "0" class = "number-button number" onclick="insertNumber(0)">
+                        <input type = "submit" value = "Deposit" class = "number-button"  style="background-color: rgb(158, 212, 158);">
+                        <input type = "button" value = "Clear" class = "number-button" onclick="clearInput()" style="background-color: rgb(239, 79, 44);">
+                    </div>
+                </form>
+                    <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu"
+                        class="button item">
                 
-                <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
-
             </div>
         </div>
         <div class="column right">
-            <input type="button" value="Logout" onclick="window.location.href='/index.html';"class="button item">
+            <form action="/logout" method="post">
+                <input type="submit" value="Logout" class="button item">
+            </form>
         </div>
     </div>
 </body>
