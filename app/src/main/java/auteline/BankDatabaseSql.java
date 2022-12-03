@@ -3,12 +3,16 @@ package auteline;
 import java.sql.*;
 
 public class BankDatabaseSql implements BankDatabaseInterface {
-
+    
+    String IP;
+    public BankDatabaseSql(String customIP){
+        IP = customIP;
+    }
     Connection connection = null;
     public void startConnection(){
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://" + ATMTest.MySQL_IP + ":3306/auteline_schema","root","pass");
+            connection = DriverManager.getConnection("jdbc:mysql://" + IP + ":3306/auteline_schema","root","pass");
         } catch (Exception e) {
             System.out.println("Could not create MySQL connection: " + e);
         }

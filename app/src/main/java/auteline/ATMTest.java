@@ -11,11 +11,8 @@ package auteline;
 
 public class ATMTest {
 
-  public static boolean runWithSQL = false;
-  public static boolean runWithGUI = false;
-
-  public static boolean customIPFlag = false;
-  public static String MySQL_IP = "localhost"; 
+  static boolean customIPFlag = false;
+  static String MySQL_IP = "localhost"; 
   // main method creates and runs the ATM
   public static void main(String[] args) {
     boolean runWithSQL = false;
@@ -45,7 +42,7 @@ public class ATMTest {
     BankDatabaseInterface bankDatabase;
 
     if (runWithSQL){
-      bankDatabase = new BankDatabaseSql();
+      bankDatabase = new BankDatabaseSql(MySQL_IP);
     }
     else{
       bankDatabase = new BankDatabase();
