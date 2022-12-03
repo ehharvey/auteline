@@ -11,12 +11,16 @@ package auteline;
 
 public class ATMTest {
 
-  static boolean customIPFlag = false;
-  static String MySQL_IP = "localhost"; 
   // main method creates and runs the ATM
   public static void main(String[] args) {
     boolean runWithSQL = false;
     boolean runWithGUI = false;
+
+    boolean customIPFlag = false;
+    String MySQL_IP = "localhost"; 
+    String database = "auteline_schema";
+    String user = "root";
+    String pass = "pass";
     
     //check for command line arguments
     for (String arg: args){
@@ -42,7 +46,7 @@ public class ATMTest {
     BankDatabaseInterface bankDatabase;
 
     if (runWithSQL){
-      bankDatabase = new BankDatabaseSql(MySQL_IP);
+      bankDatabase = new BankDatabaseSql(MySQL_IP, database, user, pass);
     }
     else{
       bankDatabase = new BankDatabase();

@@ -4,15 +4,22 @@ import java.sql.*;
 
 public class BankDatabaseSql implements BankDatabaseInterface {
     
-    String IP;
-    public BankDatabaseSql(String customIP){
+    private String IP;
+    private String user;
+    private String password;
+    private String database;
+    public BankDatabaseSql(String customIP, String DB, String userString, String pass){
         IP = customIP;
+        database = DB;
+        user = userString;
+        password = pass;
+
     }
     Connection connection = null;
     public void startConnection(){
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://" + IP + ":3306/auteline_schema","root","pass");
+            connection = DriverManager.getConnection("jdbc:mysql://" + IP + ":3306/" + database, user, password);
         } catch (Exception e) {
             System.out.println("Could not create MySQL connection: " + e);
         }
