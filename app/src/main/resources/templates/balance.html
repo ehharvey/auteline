@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<htmlxmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -19,8 +19,10 @@
         <div class="column center">
             <div class="inner-container">
                 <h1 class="item">Balance</h1>
-                <h4 id="available-balance">Available Balance: $ 1200.00</h4>
-                <h4 id="total-balance">Total Balance: $ 2000.00</h4>
+                <table>
+                    <tr><td>Avilable Balance </td><td th:text="${avaliable}"> </td></tr>
+                    <tr><td>Total Balance </td><td th:text="${total}"> </td></tr>
+                </table>
                 <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
             </div>
         </div>

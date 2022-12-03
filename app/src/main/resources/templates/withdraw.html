@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -18,10 +18,17 @@
         </div>
         <div class="column center">
             <div class="inner-container">
-                <h1 class="item">Main Menu</h1>
-                <input type="button" onclick="window.location.href='/withdraw.html';" value="Withdraw" class="button item">
-                <input type="button" onclick="window.location.href='/deposit.html';" value="Deposit" class="button item">
-                <input type="button" onclick="window.location.href='/balance.html';" value="Check Balance" class="button item">
+                <h1 class="item">Withdraw</h1>
+                <p>Select a withdraw amount</p>
+                <form action="/withdraw" method="post" class="item">
+                <input type="submit" name="amount" value="20" class="button item">
+                <input type="submit" name="amount" value="40" class="button item">
+                <input type="submit" name="amount" value="60" class="button item">
+                <input type="submit" name="amount" value="100" class="button item">
+                <input type="submit" name="amount" value="200" class="button item">
+            </form>
+                <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
+
             </div>
         </div>
         <div class="column right">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
                 <h1 class="item">Main Menu</h1>
 
                 <form action="/deposit" method="post">
-                    <input type="text" class="textbox item" placeholder="$ " name="deposit" id="input">
+                    <input type="text" pattern="[0-9]+" class="textbox item" placeholder="$ " name="deposit" id="input">
                     <div class="num-pad item">
                         <input type = "button" value = "9" class = "number-button number" onclick="insertNumber(9)">
                         <input type = "button" value = "8" class = "number-button number" onclick="insertNumber(8)">
