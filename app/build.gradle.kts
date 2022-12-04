@@ -25,6 +25,7 @@ plugins {
 	kotlin("jvm") version "1.6.21"
 	kotlin("plugin.spring") version "1.6.21"
 
+
 }
 
 
@@ -39,7 +40,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // Selenium 
-        implementation("org.seleniumhq.selenium:selenium-java:3.141.59")
+        implementation("org.seleniumhq.selenium:selenium-java:4.+")
+        implementation("io.github.bonigarcia:webdrivermanager:5.+")
 }
 
 application {
