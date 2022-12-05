@@ -1,0 +1,7 @@
+---
+sql:
+  ip: abc
+  user: mysqluser
+  password: mysqlpassword
+  database: mysqldb
+gui: false
