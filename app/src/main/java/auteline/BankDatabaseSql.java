@@ -15,7 +15,7 @@ public class BankDatabaseSql implements BankDatabaseInterface {
     
     }
 
-    public ResultSet executeQuery(String query){
+    private ResultSet executeQuery(String query){
         ResultSet result = null;
         try {
             Statement statement = connection.createStatement();
@@ -25,7 +25,7 @@ public class BankDatabaseSql implements BankDatabaseInterface {
         }
         return result;
     }
-    public void executeUpdate(String query){
+    private void executeUpdate(String query){
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate(query);
