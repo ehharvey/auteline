@@ -4,25 +4,15 @@ import java.sql.*;
 
 public class BankDatabaseSql implements BankDatabaseInterface {
     
-    private String ip;
-    private String user;
-    private String password;
-    private String database;
-    public BankDatabaseSql(String ip, String database, String user, String password){
-        this.ip = ip;
-        this.database = database;
-        this.user = user;
-        this.password = password;
-
-    }
     Connection connection = null;
-    public void startConnection(){
-
+    public BankDatabaseSql(String ip, String database, String user, String password){
+   
         try {
             connection = DriverManager.getConnection("jdbc:mysql://" + ip + ":3306/" + database, user, password);
         } catch (Exception e) {
             System.out.println("Could not create MySQL connection: " + e);
         }
+    
     }
 
     public ResultSet executeQuery(String query){
@@ -43,15 +33,7 @@ public class BankDatabaseSql implements BankDatabaseInterface {
             System.out.println("Could not execute MySQL update query: " + e);
         }
     }
-    public void closeConnection(){
-        try{
-            connection.close();
-        } catch (Exception e) {
-            System.out.println("Could not close MySQL connection: " + e);
-        }
-    }
-
-
+    
     // determines whether a user-specified PIN matches PIN in Account
     public boolean validatePIN(int accountNumber, int userPIN){
         boolean validPin;
@@ -104,8 +86,7 @@ public class BankDatabaseSql implements BankDatabaseInterface {
 
     @Override
     public boolean authenticateUser(int userAccountNumber, int userPIN) {
-        // TODO Auto-generated method stub
-        return false;
+        return validatePIN(userAccountNumber, userPIN);
     }
 }
 
