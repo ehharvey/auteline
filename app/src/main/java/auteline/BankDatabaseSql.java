@@ -14,7 +14,10 @@ public class BankDatabaseSql implements BankDatabaseInterface {
         }
     
     }
-
+    protected BankDatabaseSql(){
+        
+    }
+    
     protected ResultSet executeQuery(String query){
         ResultSet result = null;
         try {
