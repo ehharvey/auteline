@@ -17,7 +17,7 @@ plugins {
     id("io.qameta.allure") version "2.11.0"
     id("jacoco")
     id("io.ktor.plugin") version "2.1.2"
-    id("org.sonarqube") version "3.4.0.2513"
+    id("org.sonarqube") version "3.5.0.2730"
 
     // SpringBoot
     id("org.springframework.boot") version "2.7.5"
