@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Welcome</title>
+</head>
+
+<body>
+
+    <script src="scripts.js"></script>
+
+    <img class="background" src="/images/landscape.jpeg">
+    <div class="container">
+        <div class="left column">
+
+        </div>
+        <div class="center column">
+            <div class="inner-container">
+                <img class="item logo" src="images/logo.jpeg">
+                <h4 class="item">Manual Account Access</h4>
+                <form class="inner-container" action="/manual-login" method="post">
+                    <input type="text" pattern="[0-9]+" class="textbox item" name="account" id="account" placeholder="Account Number" required>
+                    <input type="password" pattern="[0-9]+" class="textbox item" name="pin" id="pin" placeholder="Pin" required  >
+                    <input class="item button" type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <div class="right column">
+
+        </div>
+    </div>
+</body>
+
+</html>

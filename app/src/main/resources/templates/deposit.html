@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Welcome</title>
+</head>
+
+<body>
+    <script src="scripts.js"></script>
+    <img class="background" src="/images/landscape.jpeg">
+    <div class="container">
+        <div class="column left">
+        </div>
+        <div class="column center">
+            <div class="inner-container">
+                <h1 class="item">Main Menu</h1>
+
+                <form action="/deposit" method="post">
+                    <input type="text" pattern="[0-9]+" class="textbox item" placeholder="$ " name="deposit" id="input">
+                    <div class="num-pad item">
+                        <input type = "button" value = "9" class = "number-button number" onclick="insertNumber(9)">
+                        <input type = "button" value = "8" class = "number-button number" onclick="insertNumber(8)">
+                        <input type = "button" value = "7" class = "number-button number" onclick="insertNumber(7)">
+                        <input type = "button" value = "6" class = "number-button number" onclick="insertNumber(6)">
+                        <input type = "button" value = "5" class = "number-button number" onclick="insertNumber(5)">
+                        <input type = "button" value = "4" class = "number-button number" onclick="insertNumber(4)">
+                        <input type = "button" value = "3" class = "number-button number" onclick="insertNumber(3)">
+                        <input type = "button" value = "2" class = "number-button number" onclick="insertNumber(2)">
+                        <input type = "button" value = "1" class = "number-button number" onclick="insertNumber(1)">
+                        <input type = "button" value = "0" class = "number-button number" onclick="insertNumber(0)">
+                        <input type = "submit" value = "Deposit" class = "number-button"  style="background-color: rgb(158, 212, 158);">
+                        <input type = "button" value = "Clear" class = "number-button" onclick="clearInput()" style="background-color: rgb(239, 79, 44);">
+                    </div>
+                </form>
+                    <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu"
+                        class="button item">
+                
+            </div>
+        </div>
+        <div class="column right">
+            <form action="/logout" method="post">
+                <input type="submit" value="Logout" class="button item">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

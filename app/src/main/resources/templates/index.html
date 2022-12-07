@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <img class="background" src="/images/landscape.jpeg">
+        <div class="container">
+            <div class="left column"></div>
+            <div class="center column">
+                <div class="inner-container">
+                    <img class="item logo" src="images/logo.jpeg">
+                    <h1 class="item">Welcome!</h1>
+                    <h4 class="item">Click the button below to get started</h4>
+                    <input class="item button" type="button" onclick="window.location.href='/login.html';"
+                        value="Login Here" />
+                </div>
+            </div>
+            <div class="right column"></div>
+        </div>
+</body>
+
+</html>

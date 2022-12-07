@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <title>Welcome</title>
+</head>
+
+<body>
+    <img class="background" src="/images/landscape.jpeg">
+    <div class="container">
+        <div class="column left">
+        </div>
+        <div class="column center">
+            <div class="inner-container">
+                <h1 class="item">Withdraw</h1>
+                <p>Select a withdraw amount</p>
+                <form action="/withdraw" method="post" class="item">
+                <input type="submit" name="amount" value="20" class="button item">
+                <input type="submit" name="amount" value="40" class="button item">
+                <input type="submit" name="amount" value="60" class="button item">
+                <input type="submit" name="amount" value="100" class="button item">
+                <input type="submit" name="amount" value="200" class="button item">
+            </form>
+                <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
+
+            </div>
+        </div>
+        <div class="column right">
+            <form action="/logout" method="post">
+                <input type="submit" value="Logout" class="button item">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
