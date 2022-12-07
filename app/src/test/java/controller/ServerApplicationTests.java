@@ -4,8 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.nio.file.Paths;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -61,6 +59,7 @@ public class ServerApplicationTests {
     @After
     public void tearDown() {
         driver.close();
+        driver.quit();
         webapp.close();
     }
 }
