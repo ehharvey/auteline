@@ -1,0 +1,137 @@
+* 
+{
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+body, html
+{
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5{
+
+}
+
+form{
+    
+}
+
+.background
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
+}
+
+.logo {
+    height: 126px;
+    width: 126px;
+    margin:  10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    font-size: x-large;
+    border: 0;
+    background-color: aliceblue;
+}
+
+.button:hover{
+    background-color: rgb(134, 156, 125);
+}
+
+.button:focus{
+    background-color: rgb(134, 156, 125);  
+}
+
+.textbox{
+    background-color: aliceblue;
+    border: 0;
+    height:60px;
+    width: 200px;
+    font-size: 24px;
+
+}
+
+.column{
+    padding: 25px;
+}
+
+.container 
+{
+     display: grid;
+     grid-template-columns: 25% 50% 25%;
+     row-gap: 0px;
+     column-gap: 0px;
+     width: 100%;
+     height: 100%;
+}
+
+
+
+.left{
+   text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.center{
+    backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.508);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.item{
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.num-pad{
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.number-button{
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+    border: 0;
+
+}
+
+.number-button:hover{
+    background-color: rgb(134, 156, 125);
+}
