@@ -14,7 +14,7 @@ repositories {
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
-    id("io.qameta.allure") version "2.11.0"
+    id("io.qameta.allure") version "2.11.2"
     id("jacoco")
     id("io.ktor.plugin") version "2.1.2"
     id("org.sonarqube") version "3.4.0.2513"
