@@ -75,3 +75,8 @@ sonarqube {
     property("sonar.projectKey", "ehharvey_auteline_AYRIQL5AHRjEj3eT5g-_")
   }
 }
+
+task("dbtest", JavaExec::class) {
+    main = "app.SystemDatabaseTests"
+    classpath = sourceSets["main"].runtimeClasspath
+}

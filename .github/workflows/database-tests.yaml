@@ -31,3 +31,13 @@ jobs:
           pip install -r ./database_tests/requirements.txt
       - name: Test
         run: SQL_PASSWORD=${{ secrets.SQL_PASSWORD }} SQL_IP=${{ secrets.SQL_IP }} python database_tests/test.py
+      
+      - name: Test using Database class
+        run: |
+          AUTELINE_SQL_IP=${{ secrets.SQL_IP }} 
+          AUTELINE_SQL_USER=sqiii
+          AUTELINE_SQL_PASSWORD=${{ secrets.SQL_PASSWORD }} 
+          AUTELINE_SQL_DATABASE=auteline 
+          gradle dbtest
+    
+

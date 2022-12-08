@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class BankDatabaseSql implements BankDatabaseInterface {
     
-    Connection connection = null;
+    protected Connection connection = null;
     public BankDatabaseSql(String ip, String database, String user, String password){
    
         try {
