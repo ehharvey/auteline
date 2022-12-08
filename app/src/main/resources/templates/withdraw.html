@@ -19,21 +19,22 @@
         <div class="column center">
             <div class="inner-container">
                 <h1 class="item">Withdraw</h1>
+                <p id="transactionMessage" th:text="${transactionMessage}"></p>
                 <p>Select a withdraw amount</p>
                 <form action="/withdraw" method="post" class="item">
-                <input type="submit" name="amount" value="20" class="button item">
-                <input type="submit" name="amount" value="40" class="button item">
-                <input type="submit" name="amount" value="60" class="button item">
-                <input type="submit" name="amount" value="100" class="button item">
-                <input type="submit" name="amount" value="200" class="button item">
+                <input type="submit" name="amount" value="20" id="20" class="button item">
+                <input type="submit" name="amount" value="40" id="40" class="button item">
+                <input type="submit" name="amount" value="60" id="60" class="button item">
+                <input type="submit" name="amount" value="100" id="100" class="button item">
+                <input type="submit" name="amount" value="200" id="200" class="button item">
             </form>
-                <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
+                <input type="button" id="menu" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
 
             </div>
         </div>
         <div class="column right">
             <form action="/logout" method="post">
-                <input type="submit" value="Logout" class="button item">
+                <input type="submit" value="Logout" id="logout" class="button item">
             </form>
         </div>
     </div>
