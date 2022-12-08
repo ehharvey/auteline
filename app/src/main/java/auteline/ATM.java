@@ -18,7 +18,7 @@ public class ATM {
   private Keypad keypad; // ATM's keypad
   private CashDispenser cashDispenser; // ATM's cash dispenser
   private DepositSlot depositSlot; // ATM's deposit slot
-  private BankDatabase bankDatabase; // account information database
+  private BankDatabaseInterface bankDatabase; // account information database
 
   // constants corresponding to main menu options
   private static final int BALANCE_INQUIRY = 1;
@@ -28,7 +28,7 @@ public class ATM {
 
   // no-argument ATM constructor initializes instance variables
   public ATM(Screen atmScreen, Keypad atmKeypad, CashDispenser atmCashDispenser, 
-             DepositSlot atmDepositSlot, BankDatabase atmBankDatabase) {
+             DepositSlot atmDepositSlot, BankDatabaseInterface atmBankDatabase) {
     userAuthenticated = false; // user is not authenticated to start
     currentAccountNumber = 0; // no current account number to start
     screen = atmScreen; // create screen

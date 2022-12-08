@@ -19,7 +19,7 @@ public class Withdrawal extends Transaction {
 
   // Withdrawal constructor
   public Withdrawal(int userAccountNumber, Screen atmScreen,
-                    BankDatabase atmBankDatabase, Keypad atmKeypad,
+                    BankDatabaseInterface atmBankDatabase, Keypad atmKeypad,
                     CashDispenser atmCashDispenser) {
     // initialize superclass variables
     super(userAccountNumber, atmScreen, atmBankDatabase);
@@ -33,7 +33,7 @@ public class Withdrawal extends Transaction {
     boolean cashDispensed = false; // cash was not dispensed yet
     double availableBalance; // amount available for withdrawal
     // get references to bank database and screen
-    BankDatabase bankDatabase = getBankDatabase();
+    BankDatabaseInterface bankDatabase = getBankDatabase();
     Screen screen = getScreen();
     // loop until cash is dispensed or the user cancels
     do {

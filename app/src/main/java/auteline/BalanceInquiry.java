@@ -12,14 +12,14 @@ package auteline;
 public class BalanceInquiry extends Transaction {
 
   // BalanceInquiry constructor
-  public BalanceInquiry(int userAccountNumber, Screen atmScreen, BankDatabase atmBankDatabase) {
+  public BalanceInquiry(int userAccountNumber, Screen atmScreen, BankDatabaseInterface atmBankDatabase) {
     super(userAccountNumber, atmScreen, atmBankDatabase);
   }
 
   // performs the transaction
   public void execute() {
     // get references to bank database and screen
-    BankDatabase bankDatabase = getBankDatabase();
+    BankDatabaseInterface bankDatabase = getBankDatabase();
     Screen screen = getScreen();
     // get the available balance for the account involved
     double availableBalance = bankDatabase.getAvailableBalance(getAccountNumber());

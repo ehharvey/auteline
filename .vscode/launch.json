@@ -33,17 +33,11 @@
         },
         {
             "type": "java",
-            "name": "Launch ATMTest",
+            "name": "Launch App",
             "request": "launch",
-            "mainClass": "auteline.ATMTest",
-            "projectName": "app"
-        },
-        {
-            "type": "java",
-            "name": "Launch AutelineApp",
-            "request": "launch",
-            "mainClass": "frame.AutelineApp",
-            "projectName": "app"
+            "mainClass": "app.App",
+            "projectName": "app",
+            "args": "${workspaceFolder}/config/config.yaml"
         }
     ]
 }

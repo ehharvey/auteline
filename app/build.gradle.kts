@@ -33,6 +33,9 @@ dependencies {
     // Use JUnit test framework.
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-core:3.+")
+    implementation("mysql:mysql-connector-java:8.0.+")
+    implementation("org.yaml:snakeyaml:1.33+")
+    implementation("net.sourceforge.argparse4j:argparse4j:0.9.0+")
 
     // Spring Boot
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
@@ -40,13 +43,13 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // Selenium 
-        implementation("org.seleniumhq.selenium:selenium-java:4.+")
-        implementation("io.github.bonigarcia:webdrivermanager:5.+")
+    implementation("org.seleniumhq.selenium:selenium-java:4.+")
+    implementation("io.github.bonigarcia:webdrivermanager:5.+")
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("auteline.ATMTest")
+    mainClass.set("app.App")
 }
 
 tasks.named<JavaExec>("run") {
@@ -71,4 +74,9 @@ sonarqube {
   properties {
     property("sonar.projectKey", "ehharvey_auteline_AYRIQL5AHRjEj3eT5g-_")
   }
+}
+
+task("dbtest", JavaExec::class) {
+    main = "app.SystemDatabaseTests"
+    classpath = sourceSets["main"].runtimeClasspath
 }
