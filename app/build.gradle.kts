@@ -49,7 +49,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("auteline.ATMTest")
+    mainClass.set("app.App")
 }
 
 tasks.named<JavaExec>("run") {
