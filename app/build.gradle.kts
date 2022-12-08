@@ -32,7 +32,7 @@ plugins {
 dependencies {
     // Use JUnit test framework.
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.mockito:mockito-core:3.+")
+    testImplementation("org.mockito:mockito-core:4.+")
     implementation("mysql:mysql-connector-java:8.0.+")
     implementation("org.yaml:snakeyaml:1.33+")
     implementation("net.sourceforge.argparse4j:argparse4j:0.9.0+")
