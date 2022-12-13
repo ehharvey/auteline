@@ -20,15 +20,15 @@
             <div class="inner-container">
                 <h1 class="item">Balance</h1>
                 <table>
-                    <tr><td>Avilable Balance </td><td th:text="${avaliable}"> </td></tr>
-                    <tr><td>Total Balance </td><td th:text="${total}"> </td></tr>
+                    <tr><td>Avilable Balance </td><td id="avaliable" th:text="${avaliable}"> </td></tr>
+                    <tr><td>Total Balance </td><td id="total" th:text="${total}"> </td></tr>
                 </table>
-                <input type="button" onclick="window.location.href='/menu.html';" value="Main Menu" class="button item">
+                <input type="button" onclick="window.location.href='/menu.html';" id="menu" value="Main Menu" class="button item">
             </div>
         </div>
         <div class="column right">
             <form action="/logout" method="post">
-                <input type="submit" value="Logout" class="button item">
+                <input type="submit" value="Logout" id="logout" class="button item">
             </form>
         </div>
     </div>

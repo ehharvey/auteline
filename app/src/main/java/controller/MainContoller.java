@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import auteline.BankDatabase;
+import auteline.CashDispenser;
+import auteline.DepositSlot;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,8 @@ import org.springframework.ui.Model;
 public class MainContoller {
 
     public BankDatabase bankDatabase = new BankDatabase();
+    public CashDispenser cashDispenser = new CashDispenser();
+    public DepositSlot depositSlot = new DepositSlot();
     public boolean isAuthenticated = false;
     public int account;
 
@@ -34,8 +38,7 @@ public class MainContoller {
 
     @RequestMapping(value = "/manual-login.html", method = RequestMethod.GET)
     public String getManualLogin(Model model) {
-            return "manual-login";
-        
+        return "manual-login";
 
     }
 
@@ -105,13 +108,26 @@ public class MainContoller {
     }
 
     @RequestMapping(value = "/withdraw", method = RequestMethod.POST)
-    public String withdraw(@RequestParam(value = "amount", required = true) int amount) {
+    public String withdraw(@RequestParam(value = "amount", required = true) int amount, Model model) {
+        String message;
 
         if (isAuthenticated) {
-            bankDatabase.debit(account, amount);
-            System.out.println(bankDatabase.getTotalBalance(account));
-            return "menu";
 
+            double avalBalance = bankDatabase.getAvailableBalance(account);
+            if (avalBalance >= amount) {
+                if (cashDispenser.isSufficientCashAvailable(amount)) {
+                    bankDatabase.debit(account, amount);
+                    System.out.println(bankDatabase.getTotalBalance(account));
+                    return "menu";
+                }else{
+                    message = "Error: Cash Dispenser does not have enough funds.";
+                }
+            }else{
+                message = "Error: Insufficent funds in your account. Please choose a different amount.";
+            }
+
+            model.addAttribute("transactionMessage", message);
+            return "withdraw";
         }
         return authenicationError();
     }

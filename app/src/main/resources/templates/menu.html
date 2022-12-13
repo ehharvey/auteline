@@ -19,14 +19,14 @@
         <div class="column center">
             <div class="inner-container">
                 <h1 class="item">Main Menu</h1>
-                <input type="button" onclick="window.location.href='/withdraw.html';" value="Withdraw" class="button item">
-                <input type="button" onclick="window.location.href='/deposit.html';" value="Deposit" class="button item">
-                <input type="button" onclick="window.location.href='/balance.html';" value="Check Balance" class="button item">
+                <input type="button" onclick="window.location.href='/withdraw.html';" id="withdraw" value="Withdraw" class="button item">
+                <input type="button" onclick="window.location.href='/deposit.html';" id="deposit" value="Deposit" class="button item">
+                <input type="button" onclick="window.location.href='/balance.html';" id="balance" value="Check Balance" class="button item">
             </div>
         </div>
         <div class="column right">
             <form action="/logout" method="post">
-                <input type="submit" value="Logout" class="button item">
+                <input type="submit" value="Logout" id="logout" class="button item">
             </form>
         </div>
     </div>
